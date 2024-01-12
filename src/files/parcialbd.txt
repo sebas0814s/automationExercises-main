@@ -1,0 +1,53 @@
+4. ¿Qué función cumple SQL?
+R//cumple la funcion de hacer consultas a una base de datos como buscar o insertar datos.
+15. ¿Qué representa el valor NULL? 
+R//Que un dato de la tabla no tiene ningun valor.
+17. ¿Qué es un alias? 
+R//es el sobre nombre, que se le puede poner a algun campo o columna.
+19. ¿Cómo se crea un índice en SQL? 
+R//con el ID de una tabla, por lo general la primary key
+3. ¿Cuáles son los sistemas de gestión de bases de datos
+relacionales más usados? 
+R//Sql server, mysql, oracle, postgress
+25. ¿Cómo se pueden seleccionar todos los números pares o impares
+de una tabla? 
+R//SELECT num_users FROm users WHERE num_users & 2 = 0;
+¿Qué función cumple SQL?
+
+SQL (Structured Query Language) se utiliza para interactuar con bases de datos relacionales. Permite realizar consultas, inserciones, actualizaciones y eliminaciones de datos.
+¿Cómo se insertan fechas en SQL?
+
+Las fechas se insertan en SQL utilizando el formato adecuado, como 'YYYY-MM-DD' para SQL Server o 'YYYY-MM-DD HH:MI:SS' para otros RDBMS.
+¿Cuáles son los tipos de consultas de acción más importantes?
+
+Las consultas de acción más importantes en SQL son INSERT, UPDATE y DELETE, que se utilizan para agregar, modificar y eliminar datos en una base de datos.
+¿Cuáles son los distintos tipos de comandos SQL?
+
+Los comandos SQL incluyen DDL (Data Definition Language) para definir estructuras de base de datos, DML (Data Manipulation Language) para manipular datos, y DQL (Data Query Language) para realizar consultas.
+¿Cuáles son las diferencias más importantes entre los índices agrupados y no agrupados?
+
+Un índice agrupado determina el orden físico de los datos en una tabla, mientras que un índice no agrupado no afecta al orden físico. Cada tabla puede tener solo un índice agrupado, pero múltiples índices no agrupados.
+¿Cuáles son los distintos tipos de intercalación?
+
+La intercalación en SQL se refiere a la configuración regional y de idioma utilizada para almacenar y comparar cadenas de caracteres. Los tipos de intercalación incluyen BIN, CI, CS, AI, entre otros.
+¿Cómo se cambia el nombre de una columna en SQL?
+
+Para cambiar el nombre de una columna en SQL, puedes utilizar el comando "ALTER TABLE". Por ejemplo: ALTER TABLE MiTabla RENAME COLUMN NombreColumna TO NuevoNombreColumna;
+¿Qué es un esquema?
+
+Un esquema en SQL es una colección lógica de objetos de base de datos, como tablas, vistas y procedimientos almacenados. Ayuda a organizar y gestionar la base de datos.
+
+2)
+SELECT P.Nombre AS NombreProfesor, P.Apellido AS ApellidoProfesor
+FROM Profesores AS P
+JOIN Notas AS N ON P.ID = N.ID_Profesor
+WHERE N.Curso = 'Fundamentos de Bases de Datos'
+AND N.Nota = (SELECT MIN(Nota) FROM Notas WHERE Curso = 'Fundamentos de Bases de Datos');
+
+3)
+SELECT Nombre, Apellido, Salario
+FROM Profesores
+WHERE Salario < (SELECT AVG(Salario) FROM Profesores)
+ORDER BY ID ASC
+LIMIT 1;
+
